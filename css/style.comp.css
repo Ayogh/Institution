@@ -1,0 +1,308 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Nunito", "sans-serif";
+  font-weight: 400;
+  line-height: 1.6;
+  background-image: linear-gradient(to right bottom, #C0C0C0, #708090);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+.container {
+  display: grid;
+  grid-template-rows: min-content, max-content, min-content;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.4); }
+
+.header {
+  margin-top: 1rem;
+  background-color: #F9F6EE;
+  grid-column: center-start / center-end;
+  padding: 3rem;
+  color: #000000; }
+  .header__row1 {
+    margin-left: 0.5rem;
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid grey; }
+    .header__row1-form__radio {
+      display: inline-block;
+      margin-top: -2rem;
+      margin-right: 1rem;
+      /*  *********************Start of section to Delete*************************************************
+         //start of x-icon, search form, and magnifying glass.
+         //"&-search" represents the Container containing the "x-icon" and searchbox "Type To Search"
+         &-search{
+            top: 8rem; // needed position: relative; for it to work
+            left: 0rem; // needed position: relative; for it to work
+            //height: 100vh;
+            //width: 100%;
+            width: 0;
+            height: 0;
+            position: relative;
+            z-index: -10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.8s;
+            
+            background-color: blue;
+            &-checkbox{
+               //display: none;
+            }
+            &-label{
+              
+               position: absolute; //needed for margin-top
+               margin-top: 5rem; //needed for margin-left
+               margin-left: 9rem;
+               height: 3rem;
+               width: 4rem;
+               background-color: darkred;
+            }
+            //button is inside label, but we shall make it greater than label container.
+            &-button{
+               color: white;
+               border: none;
+               //margin-top: 2rem;
+               height: 5rem;
+               width: 8rem;
+               cursor: pointer;
+               background-color: cyan;
+               //needed to use standard css technique to center svg x-icon. We also use flex as we shall see in "&-icon".
+               position: relative; 
+               &:active{
+                  transform: translateY(-1px);
+                  box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+               }
+               &:hover{
+                  background-color: rosybrown;
+                  box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+               }
+               &:focus{
+                  outline: none;
+                  background-color: rosybrown;
+               }
+            }
+            //end of "&-button"
+            //x-icon
+            &-icon{
+               height: 2.5rem;
+               width: 2.5rem;
+               fill: white;
+            }
+            //end of x-icon
+
+            //start of search form and magnifying glass.
+            //Container containing "Type To Search" Form and "Magnifying glass icon" is called "&__input"
+            &__input{
+               margin-top: 20rem;
+               background-color: darkred;
+               //visibility: hidden;
+               //display: block;
+               //background-color: darkred;
+               
+               //display: none;
+               &-form{
+                  display: block;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  &-input{
+                     width: 90%;
+
+                  }
+                  //&-button{
+                     //width: 7rem;
+                     //height: 7rem;
+                     //background-color: green;
+                     //margin-left: 6rem;
+
+                  //}
+                  
+                  &__icon{
+                     transform: scale(0.1);
+                     fill: red;
+                  }
+               }
+            }
+         }
+         *************************End of section to Delete********************************************/ }
+      .header__row1-form__radio-input {
+        display: none; }
+      .header__row1-form__radio-label {
+        height: 4rem;
+        width: 7rem;
+        padding: 5px; }
+      .header__row1-form__radio-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: darkblue;
+        border: none;
+        height: 4rem;
+        width: 7rem;
+        background-color: white;
+        cursor: pointer; }
+      .header__row1-form__radio-search1 {
+        padding: 2px;
+        color: white;
+        font-weight: bold; }
+      .header__row1-form__radio-icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: darkblue; }
+    .header__row1__navigation {
+      display: block;
+      position: relative;
+      z-index: 1; }
+      .header__row1__navigation__checkbox {
+        position: absolute;
+        margin-left: 1.7rem;
+        margin-top: 1rem;
+        opacity: 0; }
+      .header__row1__navigation__button {
+        margin-top: -0.35rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: none;
+        height: 4rem;
+        width: 5rem;
+        background-color: white;
+        cursor: pointer; }
+      .header__row1__navigation__icon {
+        position: relative; }
+        .header__row1__navigation__icon, .header__row1__navigation__icon::before, .header__row1__navigation__icon::after {
+          width: 3rem;
+          height: 2px;
+          background-color: #0000FF;
+          display: inline-block; }
+        .header__row1__navigation__icon::before, .header__row1__navigation__icon::after {
+          content: "";
+          position: absolute;
+          left: 0; }
+        .header__row1__navigation__icon::before {
+          top: -0.8rem; }
+        .header__row1__navigation__icon::after {
+          top: 0.8rem; }
+      .header__row1__navigation__nav {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden; }
+      .header__row1__navigation___list1 {
+        height: 100%;
+        width: 100%; }
+      .header__row1__navigation__item1 {
+        position: relative;
+        font-size: 1.8rem;
+        font-weight: 400;
+        list-style: none;
+        cursor: pointer; }
+      .header__row1__navigation__item1:hover .header__row1__navigation__list2, .header__row1__navigation__item1:focus .header__row1__navigation__list2 {
+        opacity: 1;
+        visibility: visible; }
+      .header__row1__navigation__item1:hover .header__row1__navigation__arrow > .header__row1__navigation__right, .header__row1__navigation__item1:focus .header__row1__navigation__arrow > .header__row1__navigation__right {
+        opacity: 1;
+        visibility: visible; }
+      .header__row1__navigation__list2 {
+        position: absolute;
+        top: 0;
+        left: 15rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms ease-in-out; }
+      .header__row1__navigation__list3 {
+        position: absolute;
+        top: 0;
+        left: 15rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 200ms ease-in-out; }
+      .header__row1__navigation__item2:hover .header__row1__navigation__list3, .header__row1__navigation__item2:focus .header__row1__navigation__list3 {
+        opacity: 1;
+        visibility: visible; }
+      .header__row1__navigation a:link,
+      .header__row1__navigation a:visited {
+        display: block;
+        width: 15rem;
+        text-decoration: none;
+        height: 3.8rem;
+        border-radius: 2px;
+        position: relative;
+        padding-left: 4px;
+        padding-right: 4px;
+        color: white;
+        font-size: light;
+        font-weight: 200;
+        background-color: darkblue;
+        border: 0.4px solid skyblue;
+        transition: all 0.2s ease-in-out; }
+      .header__row1__navigation a:hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        color: cyan; }
+      .header__row1__navigation a:active,
+      .header__row1__navigation a:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+      .header__row1__navigation__arrow {
+        position: absolute;
+        margin-top: 10px;
+        left: 11rem;
+        height: 10px;
+        width: 10px;
+        text-align: right;
+        border-left: 1px solid white;
+        border-bottom: 1px solid white;
+        margin-left: 16px;
+        transform: rotate(225deg); }
+      .header__row1__navigation__checkbox:checked ~ .header__row1__navigation__nav {
+        opacity: 1;
+        visibility: visible; }
+  .header__row2 {
+    display: flex;
+    justify-content: center; }
+    .header__row2__heading {
+      padding: 1rem;
+      margin-top: 2rem;
+      padding: 3rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      background-color: darkred; }
+    .header__row2__logo {
+      border-radius: 2px;
+      background-color: darkblue;
+      margin-top: 2rem;
+      margin-left: 4rem; }
+      .header__row2__logo__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+        height: 8rem;
+        fill: whitesmoke; }
+
+.major {
+  background-color: #708090;
+  grid-column: center-start / center-end;
+  color: #000000; }
+
+.footer {
+  margin-bottom: 1rem;
+  background-color: #0000FF;
+  grid-column: center-start / center-end;
+  color: #ffffff; }
